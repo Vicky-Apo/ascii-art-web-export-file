@@ -44,7 +44,8 @@ label {
 }
 
 textarea, select {
-    width: 100%;
+    resize: none;
+    width: 95%;
     margin-bottom: 15px;
     padding: 12px;
     font-size: 1rem;
