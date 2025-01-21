@@ -16,7 +16,7 @@ func GenerateASCIIArt(input, banner string) (string, error) {
 	case "thinkertoy":
 		fileName = "./banners/thinkertoy.txt"
 	default:
-		return "", fmt.Errorf("Invalid banner selected")
+		return "", fmt.Errorf("500: Invalid banner selected")
 	}
 
 	content, err := os.ReadFile(fileName)
