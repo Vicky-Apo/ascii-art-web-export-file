@@ -3,8 +3,8 @@ body {
     font-family: "Roboto", sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #2c3e50, #34495e); /* Dark blue-gray gradient */
-    color: #ecf0f1; /* Soft white-gray for text */
+    background: linear-gradient(to right, #2c3e50, #34495e); 
+    color: #ecf0f1; 
     line-height: 1.6;
     text-align: center;
     display: flex;
@@ -16,9 +16,9 @@ body {
 /* Header Styles */
 h1 {
     font-size: 2.5rem;
-    color: #ecf0f1; /* Soft white-gray */
+    color: #ecf0f1; 
     margin-top: 20px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); 
     animation: fadeIn 2s;
 }
 
@@ -28,7 +28,7 @@ form {
     width: 90%;
     margin: 20px auto;
     padding: 20px;
-    background: rgba(44, 62, 80, 0.9); /* Semi-transparent dark blue-gray */
+    background: rgba(44, 62, 80, 0.9); 
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
@@ -39,7 +39,7 @@ label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
-    color: #bdc3c7; /* Light gray for labels */
+    color: #bdc3c7; 
     text-align: left;
 }
 
@@ -52,19 +52,19 @@ textarea, select {
     border: 1px solid #ddd;
     border-radius: 8px;
     transition: border-color 0.3s, box-shadow 0.3s;
-    background-color: #e0e0e0; /* Light gray background for dropdown */
-    color: #003366; /* Vibrant dark blue text for dropdown */
+    background-color: #e0e0e0; 
+    color: #003366; 
 }
 
 textarea:focus, select:focus {
-    border-color: #003366; /* Vibrant dark blue border */
-    box-shadow: 0 0 10px rgba(0, 51, 102, 0.5); /* Blue glow */
+    border-color: #003366; 
+    box-shadow: 0 0 10px rgba(0, 51, 102, 0.5);
     outline: none;
 }
 
 select:hover {
-    background-color: #d6d6d6; /* Slightly darker gray on hover */
-    color: #002244; /* Darker blue text on hover */
+    background-color: #d6d6d6; 
+    color: #002244; 
 }
 
 /* Button Styles */
@@ -74,7 +74,7 @@ button {
     font-size: 1.2rem;
     font-weight: bold;
     color: white;
-    background: linear-gradient(90deg, #3b5998, #5d6d7e); /* Muted blue button gradient */
+    background: linear-gradient(90deg, #3b5998, #5d6d7e); 
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -94,17 +94,17 @@ button:active {
 /* Result Section */
 h2 {
     margin-top: 20px;
-    color: #ecf0f1; /* Soft white-gray */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    color: #ecf0f1; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); 
 }
 
 pre {
-    background: #e0e0e0; /* Soft medium-light gray */
-    color: #003366; /* Vibrant dark blue for text */
+    background: #e0e0e0; 
+    color: #003366; 
     padding: 15px;
     margin: 20px auto;
     border-radius: 8px;
-    border: 1px solid #cccccc; /* Light gray border */
+    border: 1px solid #cccccc; 
     font-family: "Courier New", Courier, monospace;
     white-space: pre;
     overflow-x: auto;
@@ -117,11 +117,11 @@ pre {
 /* Error Message */
 p[style*="color: red"] {
     text-align: center;
-    background: #ffcccc; /* Light red background */
+    background: #ffcccc; 
     padding: 10px;
     border-radius: 8px;
     font-weight: bold;
-    border: 1px solid #ff9999; /* Softer red border */
+    border: 1px solid #ff9999; 
     color: #d9534f;
 }
 
