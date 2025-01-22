@@ -59,10 +59,10 @@ textarea {
     border-radius: 8px;
     background-color: #e0e0e0;
     color: #003366;
-    resize: none; /* Απενεργοποίηση αλλαγής μεγέθους */
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Εσωτερική σκιά */
-    box-sizing: border-box; /* Συμπεριλαμβάνει padding στο πλάτος */
-    text-align: left; /* Στοίχιση του κειμένου προς τα αριστερά */
+    resize: none; 
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); 
+    box-sizing: border-box; 
+    text-align: left; 
 }
 
 
@@ -81,17 +81,22 @@ textarea:focus {
 /* Dropdown Styles */
 select {
     width: 100%;
-    text-align: left; /* Aligns the selected text to the left */
-    text-align-last: left;
     padding: 12px;
     font-size: 1rem;
-    border: 1px solid #34495e; /* Slightly lighter border */
-    border-radius: 8px; /* Rounded corners */
-    background-color: #e0e0e0; /* Light gray background */
-    color: #003366; /* Dark blue text */
-    -webkit-appearance: none; /* Removes default styling in Safari */
-    appearance: none;
+    border: 1px solid #34495e;
+    border-radius: 8px;
+    background-color: #e0e0e0;
+    color: #003366;
+    text-align: left;
+    text-align-last: left;
+    -webkit-appearance: none; /* Removes default arrow for custom styling */
+    appearance: none; /* Ensures consistent appearance */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6"%3E%3Cpath d="M0 0l5 6 5-6H0z" fill="%2343495e"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
 }
+
 
 select option {
     text-align: left; /* Aligns dropdown options to the left */
