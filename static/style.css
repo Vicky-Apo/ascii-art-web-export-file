@@ -99,11 +99,12 @@ pre {
     border-radius: 8px;
     border: 1px solid #ddd;
     font-family: "Courier New", Courier, monospace;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 90%;
+    white-space: pre;
     overflow-x: auto;
+    overflow-y: auto;
+    max-width: 90%;
+    max-height: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
 }
 
 /* Error Message */
