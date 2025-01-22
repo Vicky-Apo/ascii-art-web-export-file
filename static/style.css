@@ -35,6 +35,7 @@ form {
     flex-direction: column;
     gap: 20px; /* Adds even spacing between child elements */
     box-sizing: border-box; /* Includes padding in the width */
+    animation: fadeIn 1s ease-out;
 }
 
 /* Label Styles */
@@ -42,6 +43,8 @@ label {
     font-size: 1rem;
     color: #ecf0f1; /* Soft white text */
     margin-bottom: 5px;
+    text-align: left; /* Align labels to the left */
+    display: block;
 }
 
 /* Textarea Styles */
@@ -58,6 +61,17 @@ textarea {
     box-sizing: border-box; /* Includes padding in width */
 }
 
+textarea:hover {
+    border-color: #4c6ef5; /* Highlight border on hover */
+    box-shadow: 0 0 10px rgba(76, 110, 245, 0.3); /* Subtle glow effect */
+}
+
+textarea:focus {
+    border-color: #82b1ff; /* Bright blue border on focus */
+    outline: none;
+    box-shadow: 0 0 8px rgba(130, 177, 255, 0.6); /* Soft glow */
+}
+
 /* Dropdown Styles */
 select {
     width: 100%;
@@ -69,6 +83,8 @@ select {
     border-radius: 8px; /* Rounded corners */
     background-color: #e0e0e0; /* Light gray background */
     color: #003366; /* Dark blue text */
+    -webkit-appearance: none; /* Removes default styling in Safari */
+    appearance: none;
 }
 
 select option {
@@ -76,9 +92,16 @@ select option {
     direction: ltr; /* Ensures the text direction is left-to-right */
 }
 
-/* Force consistent alignment on Firefox */
 select:focus {
     text-align-last: left; /* Forces alignment when the dropdown is focused */
+    border-color: #82b1ff;
+    box-shadow: 0 0 8px rgba(130, 177, 255, 0.6); /* Soft glow */
+}
+
+/* Select Hover */
+select:hover {
+    border-color: #4c6ef5;
+    box-shadow: 0 0 10px rgba(76, 110, 245, 0.3); /* Subtle glow effect */
 }
 
 /* Button Styles */
@@ -97,7 +120,7 @@ button {
 
 button:hover {
     background: linear-gradient(to right, #45546e, #647a92); /* Slightly lighter gradient on hover */
-    transform: translateY(-2px); /* Lift effect */
+    transform: scale(1.03); /* Small scaling effect */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
 }
 
@@ -106,6 +129,10 @@ button:active {
     transform: translateY(2px); /* Press effect */
 }
 
+button:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(130, 177, 255, 0.6); /* Soft glow */
+}
 
 /* Form Alignment */
 form > * {
@@ -136,17 +163,31 @@ p[style*="color: red"] {
     padding: 10px;
     border-radius: 8px;
     font-weight: bold;
-    border: 1px solid #ff9999; /* Softer red border */
+    border: 1px solid #f5c6cb; /* Softer red border */
     color: #d9534f;
 }
 
-/* Keyframes for Fade-In Animation */
+/* Footer Styles */
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background: #2c3e50; /* Matches the theme */
+    color: #ecf0f1;
+    text-align: center;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow above */
+}
+
+/* Fade-in animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
+        transform: translateY(-10px);
     }
     to {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -158,5 +199,9 @@ p[style*="color: red"] {
 
     textarea, select, button {
         font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Reduce header size */
     }
 }
