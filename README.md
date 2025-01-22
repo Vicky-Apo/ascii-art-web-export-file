@@ -29,6 +29,11 @@
 ### Error Handling
 - Invalid inputs or missing banners return appropriate error messages.
 - HTTP status codes ensure robust error reporting.
+- 404 Not Found: Returned when the requested resource (e.g., a missing template or banner file) cannot be found.
+- 400 Bad Request: Indicates an invalid or malformed request, such as missing required fields in the form.
+- 500 Internal Server Error: Returned for unhandled server-side errors, such as unexpected exceptions or file read errors.
+
+These status codes ensure robust error reporting and help users understand what went wrong.
 
 ## Setup and Usage
 
@@ -78,4 +83,6 @@
 - **Templates**: Go's `html/template` package
 - **Server**: `net/http`
 
+
+**Authors**: *Kostas Apostolou, Yana Kopilova, Vicky Apostolou*
 ---
