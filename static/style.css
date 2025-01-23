@@ -152,6 +152,7 @@ form > * {
 
 /* Result Section */
 pre {
+    text-align: left;
     background: #e0e0e0; /* Soft medium-light gray */
     color: #003366; /* Vibrant dark blue for text */
     padding: 20px; /* Adds space inside the result area */
