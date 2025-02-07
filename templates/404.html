@@ -3,12 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Not Found</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <title>404 - Page Not Found</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #2c3e50; /* Same dark blue as main page */
+            color: #ecf0f1;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #34495e; /* Slightly darker background for content box */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            color: #e74c3c; /* Friendly red */
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            font-weight: 200;
+            margin-bottom: 20px;
+        }
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: 400;
+            color: #ecf0f1;
+            background-color: #3498db; /* Light blue button */
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        a:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
-    <h1>404 - Not Found</h1>
-    <p>This page does not exist.</p>
-    <a href="/">Go back to Home</a>
+    <div class="container">
+        <h1>404 - Oops!</h1>
+        <p>It looks like the page you're looking for is missing.</p>
+        <p>But don’t worry, you can always go back and find your way!</p>
+        <a href="/">Go Back to Home</a>
+    </div>
 </body>
 </html>
