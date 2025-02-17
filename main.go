@@ -1,7 +1,7 @@
 package main
 
 import (
-	"ascii-art-web/ascii"
+	"ascii-art-web-export/ascii"
 	"fmt"
 	"html/template"
 	"log"
@@ -17,12 +17,13 @@ type PageData struct {
 	Banners  []string
 }
 
+var lastGeneratedASCII string
+
 func main() {
-
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
-
 	http.HandleFunc("/", homePage)
 	http.HandleFunc("/404", handler404)
+	http.HandleFunc("/download", downloadHandler)
 
 	fmt.Println("Server is running at http://localhost:8080")
 	if err := http.ListenAndServe(":8080", nil); err != nil {
@@ -90,16 +91,17 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			log.Println("ASCII Generation Error:", err)
 			data.Error = err.Error()
-
 			if err.Error() == "Banner file not found" {
 				w.WriteHeader(http.StatusNotFound)
 			} else {
 				w.WriteHeader(http.StatusInternalServerError)
 			}
-
 			tmpl.Execute(w, data)
 			return
 		}
+
+		// Store the last generated ASCII art for download
+		lastGeneratedASCII = asciiArt
 
 		data.Text = text
 		data.Banner = banner
@@ -108,4 +110,20 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 	}
 
 	tmpl.Execute(w, data)
+}
+
+func downloadHandler(w http.ResponseWriter, r *http.Request) {
+	if lastGeneratedASCII == "" {
+		http.Error(w, "No ASCII art generated yet", http.StatusBadRequest)
+		return
+	}
+
+	// Set response headers for file download
+	w.Header().Set("Content-Type", "text/plain")
+	w.Header().Set("Content-Disposition", "attachment; filename=ascii_art.txt")
+	w.Header().Set("Content-Length", fmt.Sprintf("%d", len(lastGeneratedASCII)))
+
+	// Write ASCII art content to response
+	w.WriteHeader(http.StatusOK)
+	w.Write([]byte(lastGeneratedASCII))
 }

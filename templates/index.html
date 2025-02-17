@@ -8,10 +8,11 @@
 </head>
 <body>
     <h1>ASCII Art Generator</h1>
+    
     <form action="/" method="post">
         <label for="text">Enter your text:</label>
         <textarea id="text" name="text" rows="5" cols="50" required></textarea>
-
+        
         <label for="bannerSelect">Choose a Banner:</label>
         <select id="bannerSelect" name="banner" required>
             <option value="">-- Select a banner --</option>
@@ -19,14 +20,23 @@
             <option value="{{.}}">{{.}}</option>
             {{end}}
         </select>
-
+        
         <button type="submit">Generate</button>
     </form>
-
+    
     <h2>Result:</h2>
     <pre>{{.ASCIIArt}}</pre>
+
+    {{if .ASCIIArt}}
+    <!-- Download Button (Appears Only if ASCII Art is Generated) -->
+    <a href="/download">
+        <button>Download ASCII Art</button>
+    </a>
+    {{end}}
+
     {{if .Error}}
     <p style="color: red;">Error: {{.Error}}</p>
     {{end}}
 </body>
 </html>
+

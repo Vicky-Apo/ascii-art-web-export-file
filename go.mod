@@ -1,3 +1,3 @@
-module ascii-art-web
+module ascii-art-web-export
 
-go 1.23.4
+go 1.22.2
