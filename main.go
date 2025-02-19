@@ -2,14 +2,11 @@ package main
 
 import (
 	"ascii-art-web-export-file/ascii"
-	"encoding/json"
 	"fmt"
 	"html/template"
 	"log"
 	"net/http"
 	"os"
-	"strings"
-	"time"
 )
 
 // PageData holds template data
@@ -145,8 +142,6 @@ func downloadHandler(w http.ResponseWriter, r *http.Request) {
 
 	format := r.URL.Query().Get("format")
 	switch format {
-	case "json":
-		exportJSON(w, lastGeneratedASCII, lastBanner)
 	case "html":
 		exportHTML(w, lastGeneratedASCII)
 	default:
@@ -161,7 +156,7 @@ func exportTXT(w http.ResponseWriter, asciiArt string) {
 	w.Write([]byte(asciiArt))
 }
 
-func exportJSON(w http.ResponseWriter, asciiArt, banner string) {
+/*func exportJSON(w http.ResponseWriter, asciiArt, banner string) {
 	lines := strings.Split(asciiArt, "\n")
 	data := map[string]interface{}{
 		"ascii_art": lines,
@@ -175,6 +170,7 @@ func exportJSON(w http.ResponseWriter, asciiArt, banner string) {
 	w.Header().Set("Content-Length", fmt.Sprintf("%d", len(jsonData)))
 	w.Write(jsonData)
 }
+*/
 
 func exportHTML(w http.ResponseWriter, asciiArt string) {
 	htmlContent := fmt.Sprintf("<html><body><pre>%s</pre></body></html>", asciiArt)
