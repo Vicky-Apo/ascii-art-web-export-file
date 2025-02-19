@@ -59,6 +59,7 @@ These status codes ensure robust error reporting and help users understand what 
 ├── ascii/
 │   ├── asciiPrints.go  
 │   ├── bannerList.go  
+    ├── export.go 
 ├── banners/            
 ├── static/
 │   └── style.css       
@@ -122,6 +123,7 @@ To simplify the process of building and running the Docker container, a **helper
 - **`main.go`**: Entry point for the server, handles routing.
 - **`asciiPrints.go`**: Contains the logic for generating ASCII art.
 - **`bannerList.go`**: Lists available banners by reading the `banners` directory (and removes .txt suffix).
+- **`export.go`**: Contains the download file options and their appearance. 
 - **`templates/`**: HTML templates for the main and error pages.
 - **`static/style.css`**: Stylesheet for the frontend.
 - **`banners/`**: Directory containing the ASCII font files.
