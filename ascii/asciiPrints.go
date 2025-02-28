@@ -21,7 +21,7 @@ func GenerateASCIIArt(input, banner string) (string, error) {
 
 	content, err := os.ReadFile(fileName)
 	if err != nil {
-		return "", fmt.Errorf("Error reading banner file: %v", err)
+		return "", fmt.Errorf("error reading banner file: %v", err)
 	}
 
 	normalizedContent := strings.ReplaceAll(string(content), "\r", "")
